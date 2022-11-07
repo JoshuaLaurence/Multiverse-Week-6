@@ -2,8 +2,8 @@
 
 ## This is my fork of the multiverse SWE apprenticeship week 6 repo
 
-#### Tasks to *be done*
-1. Day 1 - The Basics of Express.js :star:
+#### Tasks to be done
+1. Day 1 - The Basics of Express.js    :star: (A gold star... for quality assurance purposes)
    1. **Easy** 
       - Hello World :white_check_mark:	
    2. **Medium**
