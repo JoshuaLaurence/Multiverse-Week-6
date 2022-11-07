@@ -1,9 +1,26 @@
 const express = require("express");
 const path = require("path");
+const ejs = require("ejs")
 
 const app = express();
+const assetsFolder = path.join(__dirname, "assets")
 
 // Serve static resources from the `assets` folder.
+app.use(express.static(assetsFolder))
+app.set("view engine", "ejs")
+
+app.get("/time", (req, res) => {
+
+  const date = new Date();
+  const timeArray = [date.getHours(), date.getMinutes(), date.getSeconds()].map((a) => a < 10 ? "0" + a : a)
+  const actualTime = timeArray.join(":")
+
+  res.render("time.ejs", {
+    theFullTime: date.toISOString(),
+    theTime: actualTime
+  })
+})
+
 
 // Add a GET handler that always responds successfully with the current time
 // in a web page, using the following template:
