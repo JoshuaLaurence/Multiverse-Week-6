@@ -21,6 +21,8 @@ app.get("/time", (req, res) => {
   })
 })
 
+app.listen(5002)
+
 
 // Add a GET handler that always responds successfully with the current time
 // in a web page, using the following template:
