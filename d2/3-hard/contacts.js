@@ -79,7 +79,8 @@ app.put("/contacts/:id", async (req, res) => {
         if (!req.body.firstName || !req.body.lastName) {
             res.sendStatus(400)
         } else {
-            //console.log("Bob")
+            contact.update(req.body)
+            res.sendStatus(200)
         }
     } else {
         res.sendStatus(404)
@@ -99,7 +100,8 @@ app.patch("/contacts/:id", async (req, res) => {
     const contact = await Contact.findByPk(req.params.id)
     if (contact !== null) {
         if (req.body !== null) {
-            //await Contact.update(req.body, {where: {id: req.params.id}})
+            contact.update(req.body)
+            res.sendStatus(200)
         }
     } else {
         res.sendStatus(404)

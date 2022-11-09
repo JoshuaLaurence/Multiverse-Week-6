@@ -11,14 +11,17 @@ let data = {};
 // in an `application/json` response body.
 
 app.get("/data", (req, res) => {
-    res.send(data)
+    res.json(data)
 })
 
 // Add a POST handler on the "/data" route that updates the current `data` from
 // the request body.
 
 app.post("/data", (req, res) => {
-    console.log(req.body)
+    if (req.body === null) {
+        
+    }
+    data = req.body
 })
 
 module.exports = app;
